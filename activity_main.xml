@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cyber_black"
+    android:padding="20dp">
+
+    <!-- HEADER / JUDUL UTAMA -->
+    <LinearLayout
+        android:id="@+id/headerArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NEBULA TOOLS"
+            android:textColor="@color/neon_blue"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SYSTEM CONTROL SYSTEM v1.0"
+            android:textColor="@color/text_gray"
+            android:textSize="11sp" />
+    </LinearLayout>
+
+    <!-- CARD STATUS SHIZUKU -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/headerArea"
+        android:layout_marginBottom="20dp"
+        app:cardCornerRadius="12dp"
+        app:cardBackgroundColor="@color/cyber_card"
+        app:strokeColor="@color/neon_green"
+        app:strokeWidth="1.5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="SHIZUKU CORE ENGINE"
+                    android:textColor="@color/text_white"
+                    android:textStyle="bold"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:id="@+id/txtStatusShizuku"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Memeriksa Koneksi..."
+                    android:textColor="@color/neon_green"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp"/>
+            </LinearLayout>
+
+            <!-- Tombol Connect/Disconnect Ringkas -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConnect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CONNECT"
+                android:textSize="12sp"
+                android:textColor="@color/cyber_black"
+                app:backgroundTint="@color/neon_green"
+                app:cornerRadius="8dp"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- TOMBOL UTAMA: TURBO BOOST GAME -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/btnBoost"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_below="@id/cardStatus"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/cyber_card"
+        app:strokeColor="@color/neon_blue"
+        app:strokeWidth="2dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACTIVATE NEBULA TURBO"
+                android:textColor="@color/neon_blue"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:layout_centerVertical="true"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tap to optimize device hardware"
+                android:textColor="@color/text_gray"
+                android:textSize="12sp"
+                android:layout_alignParentBottom="true"/>
+        </RelativeLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</RelativeLayout>
