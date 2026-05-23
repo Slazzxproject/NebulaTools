@@ -1,4 +1,4 @@
-name: Android CI
+name: Android CI (Pabrik APK Nebula)
 
 on:
   push:
@@ -10,8 +10,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Clone Kode
+    - name: Clone Kode dari Repository
       uses: actions/checkout@v4
+
+    - name: Ekstrak File Proyek ZIP
+      run: |
+        unzip NebulaTools.zip
+        # Pindahkan isi jika terekstrak ke dalam folder bersarang
+        if [ -d "NebulaTools" ]; then
+          mv NebulaTools/* .
+        fi
 
     - name: Siapkan Java JDK 17
       uses: actions/setup-java@v4
@@ -23,7 +31,7 @@ jobs:
     - name: Beri Izin Mesin Gradle
       run: chmod +x gradlew
 
-    - name: Mulai Masak APK
+    - name: Mulai Masak APK debug
       run: ./gradlew assembleDebug
 
     - name: Upload File APK Jadi
